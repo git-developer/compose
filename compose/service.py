@@ -878,9 +878,9 @@ class Service(object):
                 self.options)
 
         if 'volumes' in container_options or override_volumes:
-            container_options['volumes'] = list(set(
+            container_options['volumes'] = list(
                 container_options.get('volumes', []) + override_volumes
-            ))
+            )
 
         container_options['environment'] = merge_environment(
             self._parse_proxy_config(),
